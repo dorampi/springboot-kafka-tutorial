@@ -12,7 +12,7 @@ public class KafkaTopicConfig {
     @Value("${spring.kafka.topics.dxl}")
     private String dxlTopic;
 
-    @Value("${spring.kafka.topics.dxl_json}")
+    @Value("${spring.kafka.topics.dxl-json}")
     private String dxlJsonTopic;
 
     @Bean
