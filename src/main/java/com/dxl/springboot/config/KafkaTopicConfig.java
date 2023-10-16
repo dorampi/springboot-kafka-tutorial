@@ -8,6 +8,7 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
+//    TODO move the topic name to properties file and load via @Value annotation;
     @Bean
     public NewTopic dxlTopic() {
         return TopicBuilder.name("dxl")
