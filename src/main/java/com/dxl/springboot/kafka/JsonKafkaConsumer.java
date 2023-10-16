@@ -11,7 +11,7 @@ public class JsonKafkaConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonKafkaConsumer.class);
 
-    @KafkaListener(topics = "${spring.kafka.topics.dxl_json}", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "${spring.kafka.topics.dxl-json}", groupId = "${spring.kafka.consumer.group-id}")
     public void consume(User user) {
         LOGGER.info(String.format("Json message received -> %s", user.toString()));
     }

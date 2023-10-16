@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonKafkaProducer {
 
-    @Value("${spring.kafka.topics.dxl_json}")
+    @Value("${spring.kafka.topics.dxl-json}")
     private String dxlJsonTopic;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonKafkaProducer.class);

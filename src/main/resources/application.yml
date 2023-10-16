@@ -7,7 +7,7 @@ spring:
     kafka:
         topics:
             dxl: dxl
-            dxl_json: dxl_json
+            dxl-json: dxl_json
         consumer:
             auto-offset-reset: earliest
             bootstrap-servers: localhost:9092
