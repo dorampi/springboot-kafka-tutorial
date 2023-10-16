@@ -25,7 +25,7 @@ public class JsonKafkaProducer {
 
         Message<User> message = MessageBuilder
                 .withPayload(data)
-                .setHeader(KafkaHeaders.TOPIC, "dxl")
+                .setHeader(KafkaHeaders.TOPIC, "dxl_json")
                 .build();
 
         kafkaTemplate.send(message);

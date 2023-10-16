@@ -14,4 +14,10 @@ public class KafkaTopicConfig {
         return TopicBuilder.name("dxl")
                 .build();
     }
+
+    @Bean
+    public NewTopic dxlJsonTopic() {
+        return TopicBuilder.name("dxl_json")
+                .build();
+    }
 }

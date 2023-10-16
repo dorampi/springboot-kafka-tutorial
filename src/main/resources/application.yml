@@ -1,0 +1,29 @@
+
+# https://stackoverflow.com/questions/70252047/this-error-handler-cannot-process-serializationexceptions-directly-please-con
+# https://velog.io/@_koiil/SpringBoot-Kafka
+# used these in reference to fix serialization error;
+
+spring:
+    kafka:
+        consumer:
+            auto-offset-reset: earliest
+            bootstrap-servers: localhost:9092
+            group-id: myGroup
+            key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            properties:
+                spring:
+                    deserializer:
+                        key:
+                            delegate:
+                                class: org.apache.kafka.common.serialization.StringDeserializer
+                        value:
+                            delegate:
+                                class: org.springframework.kafka.support.serializer.JsonDeserializer
+                    json:
+                        trusted:
+                            packages: "*"
+        producer:
+            bootstrap-servers: localhost:9092
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
